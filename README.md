@@ -1,6 +1,6 @@
 # httpie
 
-> Docker image with httpie and jq installed
+> Docker image with httpie, jq and yq installed
 
 ---
 
@@ -9,7 +9,7 @@
 ## Getting Started
 
 ```
-$ docker run -it --rm blacktop/httpie -b ifconfig.co/json
+$ docker run -it --rm nghiach/httpie -b ifconfig.co/json
 
 {
     "country": "United States",
@@ -26,7 +26,7 @@ $ docker run -it --rm blacktop/httpie -b ifconfig.co/json
 ### Combine `httpie` and `jq`
 
 ```bash
-$ docker run -it --rm --entrypoint=sh blacktop/httpie -c "http ifconfig.co/json | jq .ip"
+$ docker run -it --rm --entrypoint=sh nghiach/httpie -c "http ifconfig.co/json | jq .ip"
 
 "34.10.12.40"
 ```
